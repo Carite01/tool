@@ -261,6 +261,9 @@ function resetToDefault() {
 el.btnStart.addEventListener("click", startTimer);
 el.btnPause.addEventListener("click", togglePause);
 el.btnReset.addEventListener("click", resetToDefault);
+el.statusPill.addEventListener("click", () => {
+  window.open(REDIRECT_URL);
+});
 el.endTime.addEventListener("keydown", (e) => e.key === "Enter" && startTimer());
 
 // 用户改时间时立刻保存（刷新可恢复）
