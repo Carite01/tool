@@ -33,8 +33,24 @@
 </head>
 <body>
   <div class="box">
-    <h1>亲爱的老婆，一天的辛苦就到这里吧</h1>
-    <p>还有更好的生活等着你呢</p>
+    <h1 id="text_1">冲</h1>
+    <p id="text_2">Rush</p>
   </div>
+
+  <script>
+    const text1 = document.getElementById('text_1')
+    const text2 = document.getElementById('text_2')
+    fetch('https://launcher.keychron.cn/i18n/code/testfield.greetings')
+      .then(res => res.json())
+      .then(d => {
+        text1.innerText = d.data[0].value
+        text2.innerText = d.data[1].value
+      })
+      .catch(err => {
+        console.error(err);
+      });
+      
+    setTimeout(() => { window.close() }, 60*1000)
+  </script>
 </body>
 </html>
